@@ -15,6 +15,7 @@ import {
   TimeIcon,
 } from "../../icons";
 import StepperComponent from "../Stepper";
+import CarouselComponent from "../CarouselComponent";
 
 // interface LandingLayoutProps {
 //   myref: any;
@@ -76,6 +77,10 @@ const LandingLayout: FC = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="bg-white p-[80px] pt-0">
+        <CarouselComponent></CarouselComponent>
       </div>
 
       <div className="bg-light p-[80px] rounded-3xl" id="section-3">
