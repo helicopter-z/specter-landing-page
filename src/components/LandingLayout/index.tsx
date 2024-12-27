@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import HomeSection from "../../images/section-1.png";
+import HomeSection from "../../images/section-image-1.png";
 import Section2Bg from "../../images/section-2-bg.png";
 import Section7Bg from "../../images/section-7-bg.png";
 import {
@@ -16,6 +16,7 @@ import {
 } from "../../icons";
 import StepperComponent from "../Stepper";
 import CarouselComponent from "../CarouselComponent";
+import UserFlowDiagram from "../UserFlowDiagram";
 
 // interface LandingLayoutProps {
 //   myref: any;
@@ -84,25 +85,24 @@ const LandingLayout: FC = () => {
       </div>
 
       <div className="bg-light p-[80px] rounded-3xl" id="section-3">
-        <div className="grid gap-4">
-          <h1 className="text-5xl">From Raw Data to Revenue Moves—</h1>
-          <h1 className="text-5xl">All in One Place</h1>
-          <button className="flex items-center gap-2 bg-black text-white border rounded-lg border w-36 text-center py-2 px-3">
+        <div className="grid gap-4 mb-[64px]">
+          <h1 className="text-4xl">From Raw Data to Revenue Moves—</h1>
+          <h1 className="text-4xl">All in One Place</h1>
+          <button className="flex items-center gap-2 bg-black text-white border rounded-lg border w-36 text-center py-2 px-3 hover:bg-blue hover:text-white">
             <StartedIcon></StartedIcon>
             Get Started
           </button>
-
-          <StepperComponent></StepperComponent>
         </div>
+        <StepperComponent></StepperComponent>
       </div>
 
       <div className="bg-[#F4F7FA] p-[80px] rounded-3xl mt-10">
         <div className="grid gap-4">
-          <button className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3">
+          <button className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white">
             <StartedIcon></StartedIcon>
             Get Started
           </button>
-          <h1 className="text-5xl">
+          <h1 className="text-4xl">
             Accelerate Growth by Turning Insight into Impact
           </h1>
           <p className="text-xl text-blacklight">
@@ -111,15 +111,15 @@ const LandingLayout: FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 mt-10">
-          <div className="grid gap-2 p-10">
+        <div className="grid grid-cols-3 mt-10">
+          <div className="grid gap-2 p-10 border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
             <SalesCycleIcon></SalesCycleIcon>
             <p className="text-xl font-semibold mt-5">Shortens Sales Cycles</p>
             <p className="text-base text-blacklight">
               Identify who’s ready to buy and reach out at the perfect moment.
             </p>
           </div>
-          <div className="grid gap-2 p-10">
+          <div className="grid gap-2 p-10 border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
             <TeamIcon></TeamIcon>
             <p className="text-xl font-semibold mt-5">Lifts the Entire Team</p>
             <p className="text-base text-blacklight">
@@ -128,7 +128,7 @@ const LandingLayout: FC = () => {
               works in sync, closer to the customer.
             </p>
           </div>
-          <div className="grid gap-2 p-10">
+          <div className="grid gap-2 p-10 border-l-0 border-y-2 border-y-[#F6F8FC]">
             <ScaleIcon></ScaleIcon>
             <p className="text-xl font-semibold mt-5">
               Scales Your Best Practices
@@ -144,8 +144,8 @@ const LandingLayout: FC = () => {
       <div className="p-[80px] mt-10">
         <div className="grid gap-4">
           <div>
-            <h1 className="text-5xl">More Than Data—</h1>
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-4xl">More Than Data—</h1>
+            <h1 className="text-4xl font-semibold">
               True Understanding and Intelligent Action
             </h1>
           </div>
@@ -158,7 +158,7 @@ const LandingLayout: FC = () => {
             </p>
           </div>
 
-          <button className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3">
+          <button className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white">
             <StartedIcon></StartedIcon>
             Get Started
           </button>
@@ -200,47 +200,56 @@ const LandingLayout: FC = () => {
         </div>
       </div>
 
-      <div className="bg-white h-screen content-center my-[64px]">
-        <div className="grid gap-4 justify-items-center">
-          <h1 className="text-5xl font-semibold">
-            Bring Your Whole Team Closer to the Customer
-          </h1>
-
-          <div className="container mx-auto p-4 relative">
-            <img src={Section7Bg} alt="" className="w-full h-auto" />
-            <div className="h-1/2 absolute top-10 rounded-lg p-4">
-              <div className="grid grid-cols-4 gap-10">
-                <div className="grid gap-2 p-10 col-start-2 col-span-2 bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+      <div className="bg-white content-center my-[64px]">
+        <h1 className="text-4xl font-semibold mb-[64px] text-center">
+          Bring Your Whole Team Closer to the Customer
+        </h1>
+        <UserFlowDiagram />
+        {/* <div className="relative">
+          <img src={Section7Bg} alt="" className="w-full h-auto" />
+          <div className="h-1/2 absolute top-10 rounded-lg p-4">
+            <div className="grid grid-cols-3 gap-[96px] mx-[96px]">
+              <div className="grid gap-2 p-6 col-start-2  bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+                <div className="flex items-center">
                   <AccountIcon></AccountIcon>
-                  <p className="text-xl font-medium">Founders & CEOs</p>
-                  <p className="text-base text-[#777777]">
-                    Get insight into customers’ common pain points, pipeline
-                    health, growth levers, and where to invest resources.
+                  <p className="text-xl font-medium ml-3 text-[#000000]">
+                    Founders & CEOs
                   </p>
                 </div>
-                {/* <div className="line"></div>
-                <div className="line-horizontal"></div> */}
-                <div className="grid gap-2 p-10 col-start-2 col-end-3 bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+                <p className="text-base text-[#444444]">
+                  Get insight into customers’ common pain points, pipeline
+                  health, growth levers, and where to invest resources.
+                </p>
+              </div>
+             
+              <div className="grid gap-2 p-6 col-start-1  bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+                <div className="flex items-center">
                   <DealIcon></DealIcon>
-                  <p className="text-xl font-medium">Sales & CS Leaders</p>
-                  <p className="text-base text-[#777777]">
-                    Never lose track of a deal, always know who to follow up
-                    with, and identify where to upsell without guesswork.
+                  <p className="text-xl font-medium ml-3 text-[#000000]">
+                    Sales & CS Leaders
                   </p>
                 </div>
-                <div className="grid gap-2 p-10  col-start-3 col-end-4 bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+                <p className="text-base text-[#444444]">
+                  Never lose track of a deal, always know who to follow up with,
+                  and identify where to upsell without guesswork.
+                </p>
+              </div>
+              <div className="grid gap-2 p-6  col-start-3  bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+                <div className="flex items-center">
                   <GrowthIcon></GrowthIcon>
-                  <p className="text-xl font-medium">Product & Growth Teams</p>
-                  <p className="text-base text-[#777777]">
-                    Uncover patterns in objections, pricing feedback, and
-                    feature requests—informing product decisions and messaging
-                    that resonates.
+                  <p className="text-xl font-medium ml-3 text-[#000000]">
+                    Product & Growth Teams
                   </p>
                 </div>
+                <p className="text-base text-[#444444]">
+                  Uncover patterns in objections, pricing feedback, and feature
+                  requests—informing product decisions and messaging that
+                  resonates.
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="bg-gradient-to-r from-[#F8F8F8] to-[#EAF3FF] h-screen content-center rounded-3xl px-[80px]">

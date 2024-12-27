@@ -1,23 +1,30 @@
 import { FC, useEffect, useRef, useState } from "react";
 import "./VerticalCarousel.css";
-import Section2Bg from "../../images/section-3-carousel-1.png";
+import CarouselImage1 from "../../images/carousel-image-1.png";
+import CarouselImage2 from "../../images/carousel-image-2.png";
+import CarouselImage3 from "../../images/carousel-image-3.png";
+import {
+  CarouselLineIcon,
+  CarouselProfileIcon,
+  CarouselTickIcon,
+} from "../../icons";
 
 const items = [
   {
     id: "01",
-    label: "Ingest Your Data",
-    description: `Your CRM listens to every call, reviews every email, and ingests product information, so it always has a comprehensive view. You don’t lift a finger—no manual updates needed.`,
+    label: "Find Growth Opportunities",
+    description: `Instantly spot ICP-matched leads and pinpoint how to move them through your pipeline.`,
   },
   {
     id: "02",
-    label: "Understand & Prioritize",
+    label: "Get Real Answers, Fast",
     description:
-      "It interprets every piece of data to highlight who’s likely to buy, who’s showing intent to expand, who’s cooling off, and when to engage. You’re never caught guessing which prospect to nurture or which account is at risk.",
+      "Ask anything about customers or deals and get usable, data-backed insights—not just regurgitated information.",
   },
   {
     id: "03",
-    label: "Take Action at Scale",
-    description: `The system doesn’t just suggest next steps—it builds the entire plan. It pinpoints the right channels, timing, and touchpoints for each account. It finds key connectors, leverages common threads, and sequences introductions. Then, it sends the emails, arranges the meetings, and updates the messaging as needed. Approve or let it run, and watch every deal move faster while nothing falls through the cracks.`,
+    label: "Align Your Team",
+    description: `Equip founders, sales, and product teams with a unified, actionable view of every account’s needs and trajectory.`,
   },
 ];
 
@@ -63,26 +70,64 @@ const CarouselComponent: FC = () => {
     }
   }, [autoScroll, autoScrollInterval]);
 
+  const getImage = (id: string, index: number) => {
+    switch (id) {
+      case "01":
+        return (
+          <CarouselLineIcon
+            color={index === currentIndex ? "#2B77E3" : "#7C7C7C"}
+          ></CarouselLineIcon>
+        );
+      case "02":
+        return (
+          <CarouselTickIcon
+            color={index === currentIndex ? "#2B77E3" : "#7C7C7C"}
+          ></CarouselTickIcon>
+        );
+      case "03":
+        return (
+          <CarouselProfileIcon
+            color={index === currentIndex ? "#2B77E3" : "#7C7C7C"}
+          ></CarouselProfileIcon>
+        );
+    }
+    return null;
+  };
+
+  const getSectionImage = () => {
+    switch (currentIndex) {
+      case 0:
+        return CarouselImage1;
+      case 1:
+        return CarouselImage2;
+      case 2:
+        return CarouselImage3;
+    }
+    return "";
+  };
+
   return (
-    <div className="vertical-carousel">
-      <div className="carousel-container" ref={containerRef}>
+    <div className="grid grid-cols-2 gap-4">
+      <div className="grid" ref={containerRef}>
         {items.map((item, index) => (
           <>
             <div key={index} className={`carousel-item}`}>
               <div className="grid gap-4 p-5">
                 <div className="flex item-center gap-6">
                   <span
-                    className={`border-2  ${index === currentIndex ? "border-[#046BFE]" : "border-[#EBEBEB]"}`}
+                    className={`border-2  ${index === currentIndex ? "border-gradient-to-b from-[#046BFE] via-[#046BFE] to-[#BDD8FF]" : "border-[#EBEBEB]"}`}
                   ></span>
                   <div className="grid gap-4">
-                    <p
-                      className={`text-xl text-blacklight ${index === currentIndex ? "active" : ""}`}
-                    >
-                      {item.label}
-                    </p>
-                    <p className="text-lg text-blacklight">
-                      {item.description}
-                    </p>
+                    <div className="flex items-center">
+                      {getImage(item.id, index)}
+                      <p
+                        className={`text-xl text-[#7C7C7C] ml-3 ${index === currentIndex ? "active" : ""}`}
+                      >
+                        {item.label}
+                      </p>
+                    </div>
+
+                    <p className="text-lg text-[#7C7C7C]">{item.description}</p>
                   </div>
                 </div>
               </div>
@@ -90,7 +135,7 @@ const CarouselComponent: FC = () => {
           </>
         ))}
       </div>
-      <img src={Section2Bg} alt="" className="w-full" />
+      <img src={getSectionImage()} alt="" className="w-full" />
     </div>
   );
 };

@@ -299,3 +299,186 @@ export const GrowthIcon = () => {
     </svg>
   );
 };
+
+export const CarouselLineIcon = ({ color = "#7C7C7C" }: { color: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="16"
+      viewBox="0 0 17 16"
+      fill="none"
+    >
+      <path
+        d="M2.11151 1.98901V11.2999C2.11151 12.9567 3.45466 14.2999 5.11151 14.2999H14.4224"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2.5"
+        stroke-linecap="square"
+      />
+      <path
+        d="M6.9151 8.56434L9.22496 6.25448L11.0033 7.75841L14.5388 4.2229"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2.5"
+        stroke-linecap="square"
+      />
+    </svg>
+  );
+};
+
+export const CarouselTickIcon = ({ color = "#7C7C7C" }: { color: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+    >
+      <path
+        d="M8.36749 1.22412H3.11151C2.00694 1.22412 1.11151 2.11955 1.11151 3.22412V13.7361C1.11151 14.8407 2.00694 15.7361 3.11151 15.7361H13.6235C14.728 15.7361 15.6235 14.8407 15.6235 13.7361V12.1081"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        d="M5.70764 7.33017L8.71241 10.3349L15.6233 3.42407"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const CarouselProfileIcon = ({
+  color = "#7C7C7C",
+}: {
+  color: string;
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="16"
+      viewBox="0 0 24 16"
+      fill="none"
+    >
+      <circle
+        cx="6.99397"
+        cy="3.9662"
+        r="2.31557"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        d="M1.11151 14.2347C1.11151 11.2647 3.80537 8.85693 7.12842 8.85693C8.96924 8.85693 10.617 9.59579 11.7207 10.7598"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <circle
+        cx="16.192"
+        cy="3.9662"
+        r="2.31557"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <path
+        d="M22.3434 14.2347C22.3434 11.2647 19.6496 8.85693 16.3265 8.85693C13.0035 8.85693 10.3096 11.2647 10.3096 14.2347"
+        stroke={color ? color : "#7C7C7C"}
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const StepperDataIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="26"
+      height="17"
+      viewBox="0 0 26 17"
+      fill="none"
+    >
+      <path
+        d="M1.95874 1.97217H11.4671"
+        stroke="#202020"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M1.95874 8.3512H11.563"
+        stroke="#202020"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M20.3788 1.34167V9.54848"
+        stroke="#202020"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M24.0216 5.44531L16.7368 5.44531"
+        stroke="#202020"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M1.95874 15.0343H23.6008"
+        stroke="#202020"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const StepperSearchIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      fill="none"
+    >
+      <circle
+        cx="8.27198"
+        cy="8.26514"
+        r="6.06324"
+        stroke="black"
+        stroke-width="2.5"
+      />
+      <path
+        d="M12.9835 12.8748L17.3119 17.2033"
+        stroke="black"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const StepperPowerIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="23"
+      viewBox="0 0 16 23"
+      fill="none"
+    >
+      <path
+        d="M7.12984 12.1219L1.95874 12.2606L10.9575 1.86499L9.21197 9.83156L14.3195 10.566L4.96216 20.884L7.12984 12.1219Z"
+        stroke="#202020"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};

@@ -113,3 +113,7 @@ code {
     left: 100%;
   }
 }
+
+.react-flow {
+  --xy-node-background-color-default: #ff5050;
+}
