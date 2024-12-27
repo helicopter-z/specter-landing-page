@@ -105,26 +105,36 @@ const steps = [
 const StepperComponent = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
+  useEffect(() => {
     const sections = document.querySelectorAll(".step-desc");
 
-    sections.forEach((section, index) => {
-      const { top, bottom } = section.getBoundingClientRect();
-      const isActive = top <= scrollPosition && bottom >= scrollPosition;
-
-      if (isActive) {
-        setActiveStep(index);
-      }
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const options = {
+      root: null, // viewport
+      threshold: 0.5, // 50% of the section is visible
     };
+
+    const handleIntersect = (entries: any) => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute("data-id");
+          onSectionEnter(sectionId);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect(); // Clean up observer on unmount
   }, []);
+
+  const onSectionEnter = (sectionId: number) => {
+    console.log(`Entered section: ${sectionId}`);
+    setActiveStep(Number(sectionId));
+    console.log(activeStep);
+    // Trigger any other function here
+  };
 
   const getImage = (id: string) => {
     switch (id) {
@@ -145,13 +155,13 @@ const StepperComponent = () => {
           <>
             <div
               key={index}
-              className={`step ${activeStep === index ? "active" : ""}`}
+              className={`step ${activeStep >= index ? "active" : ""}`}
             >
               <div className="step-indicator">
                 <div className="circle"></div>
                 {index < steps.length - 1 && <div className="line"></div>}
               </div>
-              <div className="step-desc ml-5">
+              <div className="step-desc ml-5" data-id={index}>
                 <p
                   className={`text-2xl ${activeStep === index ? "text-[#2B77E3]" : "text-[#C8C8C8]"}`}
                 >

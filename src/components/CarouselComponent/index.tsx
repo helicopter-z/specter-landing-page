@@ -113,9 +113,12 @@ const CarouselComponent: FC = () => {
           <>
             <div key={index} className={`carousel-item}`}>
               <div className="grid gap-4 p-5">
-                <div className="flex item-center gap-6">
+                <div
+                  className="flex item-center gap-6 cursor-pointer"
+                  onClick={() => setCurrentIndex(index)}
+                >
                   <span
-                    className={`border-2  ${index === currentIndex ? "border-gradient-to-b from-[#046BFE] via-[#046BFE] to-[#BDD8FF]" : "border-[#EBEBEB]"}`}
+                    className={`w-1 ${index === currentIndex ? "bg-gradient-to-b from-[#000000] from-0% via-[#046BFE] via-25% to-[#EBEBEB] to-50%" : "bg-[#EBEBEB]"}`}
                   ></span>
                   <div className="grid gap-4">
                     <div className="flex items-center">
