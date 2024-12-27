@@ -31,7 +31,8 @@
 
 p.active {
   opacity: 1;
-  font-weight: bold;
+  font-weight: 600;
+  color: #202020;
   /* transform: scale(1.1); */
 }
 

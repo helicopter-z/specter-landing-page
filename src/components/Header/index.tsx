@@ -36,7 +36,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
                 </div>
                 <div className="ml-auto">
                   <button
-                    className="flex items-center gap-2 bg-black text-white border rounded-lg py-2 px-3"
+                    className="flex items-center gap-2 bg-black text-white border rounded-lg py-2 px-3 hover:bg-blue hover:text-white"
                     onClick={() => navigate("/get-started")}
                   >
                     <StartedIcon></StartedIcon>
