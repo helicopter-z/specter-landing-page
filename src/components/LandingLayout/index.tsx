@@ -17,19 +17,18 @@ import {
 import StepperComponent from "../Stepper";
 import CarouselComponent from "../CarouselComponent";
 import UserFlowDiagram from "../UserFlowDiagram";
-
-// interface LandingLayoutProps {
-//   myref: any;
-// }
+import { useNavigate } from "react-router";
+import MovableBG from "../MovableBG";
 
 const LandingLayout: FC = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="relative bg-gradient-to-b from-[#F8F8F8] to-[#EAF3FF] rounded-b-3xl ">
         <div className="py-[80px]">
           <div className="line-container">
-            <div className="line-horizontal bg-gradient-to-r from-[#EFF6FF] to-[#DFDFDF]"></div>
-            <div className="line-vertical bg-gradient-to-r from-[#EFF6FF] to-[#DFDFDF]"></div>
+            <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
+            <div className="line-vertical transition-all duration-100 bg-gradient-to-b to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
             <div className="dot"></div>
           </div>
 
@@ -44,7 +43,10 @@ const LandingLayout: FC = () => {
                 touchpoint to uncover new leads, prevent churn, and guide every
                 account to higher revenue.
               </p>
-              <button className="flex items-center gap-2 bg-blue text-white border w-36 rounded-lg py-2 px-3">
+              <button
+                className="flex items-center gap-2 bg-black text-white hover:bg-blue hover:text-white border w-36 rounded-lg py-2 px-3"
+                onClick={() => navigate("/get-started")}
+              >
                 <StartedIcon></StartedIcon>
                 Get Started
               </button>
@@ -55,8 +57,8 @@ const LandingLayout: FC = () => {
           </div>
 
           <div className="line-container">
-            <div className="line-horizontal bg-gradient-to-r from-[#EFF6FF] to-[#DFDFDF]"></div>
-            <div className="line-vertical-top bg-gradient-to-r from-[#EFF6FF] to-[#DFDFDF]"></div>
+            <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
+            <div className="line-vertical-top transition-all duration-100 bg-gradient-to-t to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
             <div className="dot-top"></div>
           </div>
         </div>
@@ -72,7 +74,10 @@ const LandingLayout: FC = () => {
               Traditional CRMs store data. We turn it into action, guiding every
               account to the next best step.
             </p>
-            <button className="flex items-center gap-2 bg-blue text-white border rounded-lg text-center py-2 px-3">
+            <button
+              className="flex items-center gap-2 bg-black text-white hover:bg-blue hover:text-white border rounded-lg text-center py-2 px-3"
+              onClick={() => navigate("/get-started")}
+            >
               <StartedIcon></StartedIcon>
               Get Started
             </button>
@@ -88,7 +93,10 @@ const LandingLayout: FC = () => {
         <div className="grid gap-4 mb-[64px]">
           <h1 className="text-4xl">From Raw Data to Revenue Moves—</h1>
           <h1 className="text-4xl">All in One Place</h1>
-          <button className="flex items-center gap-2 bg-black text-white border rounded-lg border w-36 text-center py-2 px-3 hover:bg-blue hover:text-white">
+          <button
+            className="flex items-center gap-2 bg-black text-white border rounded-lg border w-36 text-center py-2 px-3 hover:bg-blue hover:text-white"
+            onClick={() => navigate("/get-started")}
+          >
             <StartedIcon></StartedIcon>
             Get Started
           </button>
@@ -98,7 +106,10 @@ const LandingLayout: FC = () => {
 
       <div className="bg-[#F4F7FA] p-[80px] rounded-3xl mt-10">
         <div className="grid gap-4">
-          <button className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white">
+          <button
+            className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white"
+            onClick={() => navigate("/get-started")}
+          >
             <StartedIcon></StartedIcon>
             Get Started
           </button>
@@ -158,7 +169,10 @@ const LandingLayout: FC = () => {
             </p>
           </div>
 
-          <button className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white">
+          <button
+            className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white"
+            onClick={() => navigate("/get-started")}
+          >
             <StartedIcon></StartedIcon>
             Get Started
           </button>
@@ -251,22 +265,7 @@ const LandingLayout: FC = () => {
           </div>
         </div> */}
       </div>
-
-      <div className="bg-gradient-to-r from-[#F8F8F8] to-[#EAF3FF] h-screen content-center rounded-3xl px-[80px]">
-        <div className="grid gap-4 justify-items-center">
-          <h1 className="text-5xl font-semibold">
-            Stop Managing Data— Start Driving Growth
-          </h1>
-          <p className="text-xl text-blacklight">
-            Traditional CRMs store data. We turn it into action, guiding every
-            account to the next best step.
-          </p>
-          <button className="flex items-center gap-2 bg-blue text-white border rounded-lg text-center py-2 px-3">
-            <StartedIcon></StartedIcon>
-            Get Started
-          </button>
-        </div>
-      </div>
+      <MovableBG></MovableBG>
     </>
   );
 };
