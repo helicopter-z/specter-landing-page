@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { SpecterIcon } from "../../icons";
+import { SpecterIcon, StartedIcon } from "../../icons";
 import { useNavigate } from "react-router";
 
 const Header: FC<PropsWithChildren> = ({ children }) => {
@@ -15,7 +15,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <div className="bg-white p-8">
-        <div className="bg-light rounded-t-3xl sticky top-0">
+        <div className="bg-light rounded-t-3xl sticky top-0 z-50">
           <header className="relative z-50 w-full flex-none text-sm/6 font-semibold text-slate-900 sticky top-0">
             <nav className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-3">
               <div className="relative flex items-center rounded-3xl border border-grey py-3 px-5">
@@ -36,9 +36,10 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
                 </div>
                 <div className="ml-auto">
                   <button
-                    className="bg-black text-white border w-36 rounded-2xl py-2 px-3"
+                    className="flex items-center gap-2 bg-black text-white border rounded-lg py-2 px-3"
                     onClick={() => navigate("/get-started")}
                   >
+                    <StartedIcon></StartedIcon>
                     Get Started
                   </button>
                 </div>
