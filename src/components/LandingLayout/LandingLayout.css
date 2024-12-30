@@ -1,0 +1,59 @@
+.level-1,
+.level-2 {
+  position: relative;
+}
+
+.level-1::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(45deg, #ffffff, #b1d1ff, #5d8ed3);
+  transition: background-position 2s ease;
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+.level-2-wrapper {
+  position: relative;
+}
+.level-2-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(45deg, #ffffff, #b1d1ff, #5d8ed3);
+  transition: background-position 2s ease;
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+}
+.level-2-wrapper > div::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(180deg, #ffffff, #b1d1ff, #5d8ed3);
+  transition: background-position 2s ease;
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

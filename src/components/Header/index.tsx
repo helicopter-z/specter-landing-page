@@ -1,5 +1,10 @@
-import { FC, PropsWithChildren } from "react";
-import { FooterIcon, SpecterIcon, StartedIcon } from "../../icons";
+import { FC, PropsWithChildren, useState } from "react";
+import {
+  FooterIcon,
+  HamburgerIcon,
+  SpecterIcon,
+  StartedIcon,
+} from "../../icons";
 import { useNavigate } from "react-router";
 
 const Header: FC<PropsWithChildren> = ({ children }) => {
@@ -12,15 +17,22 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
     }, 100);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <div className="bg-white p-4 md:p-8">
         <div className="bg-light rounded-t-3xl sticky top-0 z-50">
           <header className="relative z-50 w-full flex-none text-sm/6 font-semibold text-slate-900 sticky top-0">
             <nav className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-              <div className="relative flex items-center rounded-3xl border border-grey py-3 px-5">
-                <div className="hidden lg:flex lg:items-center">
-                  <SpecterIcon />
+              <div className="relative flex items-center rounded-3xl border border-grey py-3 px-3 md:px-5">
+                <SpecterIcon />
+                <div className="hidden invisible md:visible lg:flex lg:items-center">
+                  {/* <SpecterIcon /> */}
                   <a
                     className="ml-8 text-black cursor-pointer"
                     onClick={() => navigate("/")}
@@ -34,7 +46,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
                     How it Works
                   </a>
                 </div>
-                <div className="ml-auto">
+                <div className="flex items-center gap-2 ml-auto">
                   <button
                     className="flex items-center gap-2 bg-black text-white border rounded-lg py-2 px-3 hover:bg-blue hover:text-white"
                     onClick={() => navigate("/get-started")}
@@ -42,6 +54,21 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
                     <StartedIcon></StartedIcon>
                     Get Started
                   </button>
+
+                  <div className="md:hidden" onClick={toggleMenu}>
+                    <HamburgerIcon></HamburgerIcon>
+
+                    <nav className={isOpen ? "menu open" : "menu"}>
+                      <ul>
+                        <li>
+                          <a href="/">Home</a>
+                        </li>
+                        <li>
+                          <a onClick={handleClick}>How it Works</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
                 </div>
               </div>
             </nav>

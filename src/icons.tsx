@@ -57,6 +57,30 @@ export const StartedIcon = () => {
   );
 };
 
+export const HamburgerIcon = () => {
+  return (
+    <svg
+      width="33"
+      height="32"
+      viewBox="0 0 33 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="0.920654"
+        y="0.513184"
+        width="30.8794"
+        height="30.8794"
+        rx="8.5"
+        fill="white"
+        stroke="#EDEDED"
+      />
+      <path d="M9.97571 13.6421H22.7451" stroke="#5C6674" />
+      <path d="M9.97571 18.2637H22.7451" stroke="#5C6674" />
+    </svg>
+  );
+};
+
 export const FooterIcon = () => {
   return (
     <svg
