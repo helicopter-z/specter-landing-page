@@ -2,6 +2,8 @@ import { FC, useState } from "react";
 import HomeSection from "../../images/section-image-1.png";
 import Section2Bg from "../../images/section-2-bg.png";
 import Section7Bg from "../../images/section-7-bg.png";
+
+import "./LandingLayout.css"; // Include CSS for styling
 import {
   AccountIcon,
   ChatIcon,
@@ -47,8 +49,8 @@ const LandingLayout: FC = () => {
             </div>
             <div className="grid">
               <div className="line-container top md:absolute md:w-[75%]">
-                <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
-                <div className="line-vertical transition-all duration-100 bg-gradient-to-b to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
+                <div className="line-horizontal"></div>
+                <div className="line-vertical"></div>
                 <div className="dot"></div>
               </div>
               <img
@@ -56,8 +58,8 @@ const LandingLayout: FC = () => {
                 className="w-full py-[45px] md:py-[16px]"
               ></img>
               <div className="line-container bottom md:absolute md:w-[75%]">
-                <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
-                <div className="line-vertical-top transition-all duration-100 bg-gradient-to-t to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
+                <div className="line-horizontal"></div>
+                <div className="line-vertical-top"></div>
                 <div className="dot-top "></div>
               </div>
             </div>
@@ -124,14 +126,14 @@ const LandingLayout: FC = () => {
         </div>
 
         <div className="grid grid-rows-1 md:grid-cols-3 mt-10">
-          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
+          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-1 border-t-2 md:border-r-2 md:border-t-0 md:border-r-[#C0D5F3] border-t-[#C0D5F3] border-[#F6F8FC]">
             <SalesCycleIcon></SalesCycleIcon>
             <p className="text-xl font-semibold mt-5">Shortens Sales Cycles</p>
             <p className="text-base text-blacklight">
               Identify who’s ready to buy and reach out at the perfect moment.
             </p>
           </div>
-          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
+          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-1 border-t-2 md:border-r-2 md:border-t-0 md:border-r-[#C0D5F3] border-t-[#C0D5F3] border-[#F6F8FC]">
             <TeamIcon></TeamIcon>
             <p className="text-xl font-semibold mt-5">Lifts the Entire Team</p>
             <p className="text-base text-blacklight">
@@ -140,7 +142,7 @@ const LandingLayout: FC = () => {
               works in sync, closer to the customer.
             </p>
           </div>
-          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-l-0 border-y-2 border-y-[#F6F8FC]">
+          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-1 border-t-2 md:border-t-0  border-t-[#C0D5F3] border-[#F6F8FC]">
             <ScaleIcon></ScaleIcon>
             <p className="text-xl font-semibold mt-5">
               Scales Your Best Practices
@@ -223,8 +225,7 @@ const LandingLayout: FC = () => {
         {/* <div className="relative">
           <img src={Section7Bg} alt="" className="w-full h-auto" />
           <div className="h-1/2 absolute top-10 rounded-lg p-4">
-            <div className="grid grid-cols-3 gap-[96px] mx-[96px]">
-              <div className="grid gap-2 p-6 col-start-2  bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+            <div className="level-1 grid grid-cols-1 w-1/2 p-6 gap-4 bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl mx-auto mb-[200px]">
                 <div className="flex items-center">
                   <AccountIcon></AccountIcon>
                   <p className="text-xl font-medium ml-3 text-[#000000]">
@@ -236,8 +237,8 @@ const LandingLayout: FC = () => {
                   health, growth levers, and where to invest resources.
                 </p>
               </div>
-             
-              <div className="grid gap-2 p-6 col-start-1  bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+            <div className="level-2-wrapper grid grid-cols-1 md:grid-cols-2 gap-[150px] mx-[96px] w-3/4 mx-auto">
+              <div className="level-2 grid gap-2 p-6 bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
                 <div className="flex items-center">
                   <DealIcon></DealIcon>
                   <p className="text-xl font-medium ml-3 text-[#000000]">
@@ -249,7 +250,7 @@ const LandingLayout: FC = () => {
                   and identify where to upsell without guesswork.
                 </p>
               </div>
-              <div className="grid gap-2 p-6  col-start-3  bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
+              <div className="level-2 grid gap-2 p-6 bg-white border border-[#F2F2F2] shadow-lg shadow-[#0000000A] rounded-3xl">
                 <div className="flex items-center">
                   <GrowthIcon></GrowthIcon>
                   <p className="text-xl font-medium ml-3 text-[#000000]">
