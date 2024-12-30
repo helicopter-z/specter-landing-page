@@ -21,7 +21,7 @@ const MovableBG = () => {
         className="custom-container rounded-3xl"
         onMouseMove={handleMouseMove}
       >
-        <div className="content justify-items-center">
+        <div className="content justify-items-center p-7">
           <h1 className="text-5xl font-semibold">
             Stop Managing Data— Start Driving Growth
           </h1>

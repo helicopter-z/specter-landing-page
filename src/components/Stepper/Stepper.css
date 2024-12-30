@@ -40,13 +40,15 @@
   min-height: 40px;
   height: 100%;
   /* background-color: #ddd; */
-  background: linear-gradient(to bottom, #8ebdff 50%, #dddddd 50%);
+  background: linear-gradient(to top, #dddddd 75%, #8ebdff 50%);
   background-size: 100% 200%;
   background-position: bottom center;
   transition: background-position 2s ease;
+  position: relative;
 }
 
-.step.active .circle {
+.step.active .circle,
+.step.progress-done .circle {
   background-color: #2b77e3;
   fill: #2b77e3;
   filter: drop-shadow(0px 0px 11.6px #0069ff);
@@ -54,6 +56,26 @@
 
 .step.active .line {
   background-position: top center;
+}
+
+.step.progress-done .line {
+  background: linear-gradient(to top, #8ebdff 50%, #8ebdff 100%);
+  background-position: top center;
+  background-size: 100% 200%;
+  transition: background-position 2s ease;
+}
+
+.step.active .line::before {
+  content: "";
+  width: 10px; /* Size of the dot */
+  height: 10px; /* Size of the dot */
+  background-color: #8ebdff; /* Dot color */
+  border-radius: 50%; /* Makes the dot circular */
+  position: absolute;
+  transition: background-position 2s ease;
+  background-size: 100% 200%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .step-details {

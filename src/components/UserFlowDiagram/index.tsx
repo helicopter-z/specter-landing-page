@@ -17,7 +17,7 @@ const edgeTypes = {
 const initialNodes = [
   {
     id: "1",
-    position: { x: 200, y: 100 },
+    position: { x: 200, y: 0 },
     type: "custom",
     data: {
       icon: <AccountIcon></AccountIcon>,
