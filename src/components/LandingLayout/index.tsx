@@ -25,14 +25,8 @@ const LandingLayout: FC = () => {
   return (
     <>
       <div className="relative bg-gradient-to-b from-[#F8F8F8] to-[#EAF3FF] rounded-b-3xl ">
-        <div className="py-[80px]">
-          <div className="line-container">
-            <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
-            <div className="line-vertical transition-all duration-100 bg-gradient-to-b to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
-            <div className="dot"></div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 content-center px-[80px] py-10">
+        <div className="py-[30px] md:py-[80px]">
+          <div className="grid grid-rows-1 md:grid-cols-2 gap-4 content-center p-[30px] md:px-[80px] py-10">
             <div className="grid gap-4 content-center">
               <h1 className="text-5xl font-semibold">A New Kind of CRM—</h1>
               <h1 className="text-5xl font-semibold">
@@ -52,22 +46,29 @@ const LandingLayout: FC = () => {
               </button>
             </div>
             <div className="grid">
-              <img src={HomeSection} className="ml-auto"></img>
+              <div className="line-container top md:absolute md:w-[75%]">
+                <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
+                <div className="line-vertical transition-all duration-100 bg-gradient-to-b to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
+                <div className="dot"></div>
+              </div>
+              <img
+                src={HomeSection}
+                className="w-full py-[45px] md:py-[16px]"
+              ></img>
+              <div className="line-container bottom md:absolute md:w-[75%]">
+                <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
+                <div className="line-vertical-top transition-all duration-100 bg-gradient-to-t to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
+                <div className="dot-top "></div>
+              </div>
             </div>
-          </div>
-
-          <div className="line-container">
-            <div className="line-horizontal transition-all duration-100 bg-gradient-to-r to-[#DFDFDF] via-[#E9F0FA] from-[#EFF6FF]"></div>
-            <div className="line-vertical-top transition-all duration-100 bg-gradient-to-t to-[#FFFFFF] via-[#DFDFDF] from-[#DFDFDF]"></div>
-            <div className="dot-top"></div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto bg-white w-1/2 p-4 relative">
+      <div className="container mx-auto bg-white w-full md:w-1/2 p-4 relative">
         <img src={Section2Bg} alt="" className="w-full h-auto" />
         <div className="h-1/2 absolute top-1/4 rounded-lg p-4">
-          <div className="grid gap-4 justify-items-center">
+          <div className="grid gap-4 justify-items-center text-center">
             <h1 className="text-5xl">Stop Managing Data—</h1>
             <h1 className="text-5xl font-semibold">Start Driving Growth</h1>
             <p className="text-xl text-blacklight">
@@ -85,12 +86,12 @@ const LandingLayout: FC = () => {
         </div>
       </div>
 
-      <div className="bg-white p-[80px] pt-0">
+      <div className="bg-white p-[30px] md:p-[80px] pt-0 mt-[300px] md:mt-0">
         <CarouselComponent></CarouselComponent>
       </div>
 
-      <div className="bg-light p-[80px] rounded-3xl" id="section-3">
-        <div className="grid gap-4 mb-[64px]">
+      <div className="bg-light p-[30px] md:p-[80px] rounded-3xl" id="section-3">
+        <div className="grid gap-4 justify-items-center md:justify-items-start text-center md:text-start mb-[64px]">
           <h1 className="text-4xl">From Raw Data to Revenue Moves—</h1>
           <h1 className="text-4xl">All in One Place</h1>
           <button
@@ -104,8 +105,8 @@ const LandingLayout: FC = () => {
         <StepperComponent></StepperComponent>
       </div>
 
-      <div className="bg-[#F4F7FA] p-[80px] rounded-3xl mt-10">
-        <div className="grid gap-4">
+      <div className="bg-[#F4F7FA] p-[30px] md:p-[80px] rounded-3xl mt-5 md:mt-10">
+        <div className="grid gap-4 justify-items-center md:justify-items-start text-center md:text-start">
           <button
             className="flex items-center gap-2 bg-black text-white border w-36 rounded text-center py-2 px-3 hover:bg-blue hover:text-white"
             onClick={() => navigate("/get-started")}
@@ -122,15 +123,15 @@ const LandingLayout: FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 mt-10">
-          <div className="grid gap-2 p-10 border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
+        <div className="grid grid-rows-1 md:grid-cols-3 mt-10">
+          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
             <SalesCycleIcon></SalesCycleIcon>
             <p className="text-xl font-semibold mt-5">Shortens Sales Cycles</p>
             <p className="text-base text-blacklight">
               Identify who’s ready to buy and reach out at the perfect moment.
             </p>
           </div>
-          <div className="grid gap-2 p-10 border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
+          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-l-0 border-y-2 border-r-2 border-r-[#C0D5F3] border-y-[#F6F8FC]">
             <TeamIcon></TeamIcon>
             <p className="text-xl font-semibold mt-5">Lifts the Entire Team</p>
             <p className="text-base text-blacklight">
@@ -139,7 +140,7 @@ const LandingLayout: FC = () => {
               works in sync, closer to the customer.
             </p>
           </div>
-          <div className="grid gap-2 p-10 border-l-0 border-y-2 border-y-[#F6F8FC]">
+          <div className="grid gap-2 p-10 justify-items-center md:justify-items-start border-l-0 border-y-2 border-y-[#F6F8FC]">
             <ScaleIcon></ScaleIcon>
             <p className="text-xl font-semibold mt-5">
               Scales Your Best Practices
@@ -152,8 +153,8 @@ const LandingLayout: FC = () => {
         </div>
       </div>
 
-      <div className="p-[80px] mt-10">
-        <div className="grid gap-4">
+      <div className="p-[10px] md:p-[80px] mt-5 md:mt-10">
+        <div className="grid gap-4 justify-items-center md:justify-items-start text-center md:text-start">
           <div>
             <h1 className="text-4xl">More Than Data—</h1>
             <h1 className="text-4xl font-semibold">
@@ -178,7 +179,7 @@ const LandingLayout: FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-3 grid-flow-col gap-4 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-flow-col gap-y-4 md:gap-4 mt-10">
           <div className="p-10 row-span-4 bg-[#F4F7FA] rounded-3xl">
             <div className="flex justify-center items-center h-9 w-9 rounded-full bg-[#DAE5F5]">
               <ChatIcon></ChatIcon>
@@ -215,7 +216,7 @@ const LandingLayout: FC = () => {
       </div>
 
       <div className="bg-white content-center my-[64px]">
-        <h1 className="text-4xl font-semibold mb-[64px] text-center">
+        <h1 className="text-4xl font-semibold mb-8 md:mb-[64px] text-center">
           Bring Your Whole Team Closer to the Customer
         </h1>
         <UserFlowDiagram />

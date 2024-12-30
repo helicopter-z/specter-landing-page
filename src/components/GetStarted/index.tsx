@@ -11,16 +11,16 @@ const GetStarted: FC = () => {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-[#F8F8F8] to-[#EAF3FF] h-[70vh] content-center rounded-b-3xl px-[80px]">
-        <div className="grid gap-4 justify-items-center">
+      <div className="bg-gradient-to-b from-[#F8F8F8] to-[#EAF3FF] h-[70vh] content-center rounded-b-3xl px-7">
+        <div className="grid gap-4 justify-items-center text-center">
           <h1 className="text-5xl font-semibold">Let’s Get You Started</h1>
 
-          <div className="grid grid-cols-2 gap-6 w-1/2 mt-10">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-y-4 md:gap-6 w-full md:w-1/2 mt-10 items-center">
             <TextField
               label="First Name"
-              id="outlined-size-small"
+              id="first-name"
               size="small"
-              className="bg-white rounded-xl border-0 border-white"
+              className="bg-white rounded-xl w-full"
               placeholder="First Name"
               sx={{
                 "& .MuiOutlinedInput-root": {
@@ -35,9 +35,9 @@ const GetStarted: FC = () => {
             />
             <TextField
               label="Last Name"
-              id="outlined-size-small"
+              id="last-name"
               size="small"
-              className="bg-white rounded-xl"
+              className="bg-white rounded-xl w-full"
               placeholder="Last Name"
               sx={{
                 "& .MuiOutlinedInput-root": {
@@ -52,9 +52,9 @@ const GetStarted: FC = () => {
             />
             <TextField
               label="Company Name"
-              id="outlined-size-small"
+              id="company-name"
               size="small"
-              className="bg-white rounded-xl"
+              className="bg-white rounded-xl w-full"
               placeholder="Company Name"
               sx={{
                 "& .MuiOutlinedInput-root": {
@@ -69,9 +69,9 @@ const GetStarted: FC = () => {
             />
             <TextField
               label="Position"
-              id="outlined-size-small"
+              id="position"
               size="small"
-              className="bg-white rounded-xl"
+              className="bg-white rounded-xl w-full"
               placeholder="Position"
               sx={{
                 "& .MuiOutlinedInput-root": {
@@ -86,9 +86,9 @@ const GetStarted: FC = () => {
             />
             <TextField
               label="Email"
-              id="outlined-size-small"
+              id="email"
               size="small"
-              className="bg-white rounded-xl col-span-2"
+              className="bg-white rounded-xl w-full md:col-span-2"
               placeholder="Email"
               sx={{
                 "& .MuiOutlinedInput-root": {
@@ -106,7 +106,7 @@ const GetStarted: FC = () => {
               disablePortal
               options={list}
               size="small"
-              className="bg-white rounded-xl col-span-2"
+              className="bg-white rounded-xl w-full md:col-span-2"
               renderInput={(params) => (
                 <TextField
                   {...params}

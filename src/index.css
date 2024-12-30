@@ -14,9 +14,19 @@ code {
 
 .line-container {
   position: relative;
-  width: 75%;
+  width: 50%;
   height: 100px;
   background-color: transparent;
+}
+
+.line-container.top {
+  left: 0;
+  top: 0;
+}
+
+.line-container.bottom {
+  left: 0;
+  bottom: 0;
 }
 
 .line-horizontal {
@@ -69,15 +79,6 @@ code {
   border-radius: 50%;
   transform: translate(-50%, 50%);
 }
-
-/* @keyframes moveDot {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 100%;
-  }
-} */
 
 @keyframes moveDot {
   0% {

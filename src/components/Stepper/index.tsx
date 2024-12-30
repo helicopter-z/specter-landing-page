@@ -150,37 +150,39 @@ const StepperComponent = () => {
 
   return (
     <div className="grid">
-      <div className="stepper grid grid-cols-2 gap-x-4">
+      <div className="stepper">
         {steps.map((step, index) => (
           <>
             <div
               key={index}
-              className={`step ${activeStep >= index ? "active" : ""}`}
+              className={`step ${activeStep === index ? "active" : ""} ${activeStep > index ? "progress-done" : ""}`}
             >
               <div className="step-indicator">
                 <div className="circle"></div>
                 {index < steps.length - 1 && <div className="line"></div>}
               </div>
-              <div className="step-desc ml-5" data-id={index}>
-                <p
-                  className={`text-2xl ${activeStep === index ? "text-[#2B77E3]" : "text-[#C8C8C8]"}`}
-                >
-                  {step.id}
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="step-desc ml-5" data-id={index}>
+                  <p
+                    className={`text-2xl ${activeStep === index ? "text-[#2B77E3]" : "text-[#C8C8C8]"}`}
+                  >
+                    {step.id}
+                  </p>
 
-                <div className="flex items-center mt-3">
-                  {getImage(step.id)}
-                  <p className={`text-xl text-[#202020] ml-3 font-medium`}>
-                    {step.title}
+                  <div className="flex items-center mt-3">
+                    {getImage(step.id)}
+                    <p className={`text-xl text-[#202020] ml-3 font-medium`}>
+                      {step.title}
+                    </p>
+                  </div>
+
+                  <p className="text-lg text-blacklight mt-3">
+                    {step.description}
                   </p>
                 </div>
-
-                <p className="text-lg text-blacklight mt-3">
-                  {step.description}
-                </p>
+                <img src={step.image} alt="" className="w-full step-sections" />
               </div>
             </div>
-            <img src={step.image} alt="" className="w-full step-sections" />
           </>
         ))}
       </div>

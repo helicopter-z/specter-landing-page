@@ -107,8 +107,8 @@ const CarouselComponent: FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-4">
-      <div className="grid" ref={containerRef}>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid order-last md:order-first" ref={containerRef}>
         {items.map((item, index) => (
           <>
             <div key={index} className={`carousel-item}`}>

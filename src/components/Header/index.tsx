@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { SpecterIcon, StartedIcon } from "../../icons";
+import { FooterIcon, SpecterIcon, StartedIcon } from "../../icons";
 import { useNavigate } from "react-router";
 
 const Header: FC<PropsWithChildren> = ({ children }) => {
@@ -14,7 +14,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <div className="bg-white p-8">
+      <div className="bg-white p-4 md:p-8">
         <div className="bg-light rounded-t-3xl sticky top-0 z-50">
           <header className="relative z-50 w-full flex-none text-sm/6 font-semibold text-slate-900 sticky top-0">
             <nav className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -50,9 +50,9 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
 
         {children}
 
-        <div className="flex justify-between mt-[56px]">
+        <div className="grid grid-rows-2 md:grid-cols-2 gap-4 mt-[56px]">
           <div className="grid gap-4">
-            <div className="flex">
+            <div className="flex items-center">
               <SpecterIcon />
               <span className="text-xl text-medium ml-4">Specter</span>
             </div>
@@ -60,9 +60,12 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
               A New Kind of CRM—Your AI-Driven Growth Engine
             </p>
           </div>
-          <div className="grid">
+          <div className="content-start md:content-end justify-items-start md:justify-items-end">
             <p className="text-sm text-blacklight">jackson@getspecter.com</p>
-            <p className="text-sm text-blacklight">2025 Specter</p>
+            <div className="flex items-center text-end">
+              <FooterIcon></FooterIcon>
+              <p className="text-sm text-blacklight ml-1">2025 Specter</p>
+            </div>
           </div>
         </div>
       </div>
